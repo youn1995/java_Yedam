@@ -8,7 +8,7 @@ public class Student {
 	double height;
 	double weight;
 	
-	
+	//생성자를 유저가 만들면 디폴트 생성자는 만들지않음 직접만들어야함
 	//(생성자) -> 필드의 초기값지정
 	Student() {
 		System.out.println("생성자 호출");
@@ -16,6 +16,11 @@ public class Student {
 	
 	Student(String name) {
 		this.name = name; //this는 이 필드
+	}
+	
+	Student(String name, int age, double height ){
+		//this(name, age);
+		this.height = height;
 	}
 	
 	
