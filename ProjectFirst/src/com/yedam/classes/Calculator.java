@@ -29,11 +29,11 @@ public class Calculator {
 		System.out.println("Result: " + str);
 	}
 	
-	double getAreaRectangle(double width, double height) { //매소드 오버라이딩
+	double getAreaRectangle(double width, double height) { //매소드 오버로딩
 		return width * height;
 	}
 	
-	double getAreaRectangle(double sameWidth){  //매소드 오버라이딩
+	double getAreaRectangle(double sameWidth){  //매소드 오버로딩
 		return sameWidth * sameWidth;
 	}
 	
