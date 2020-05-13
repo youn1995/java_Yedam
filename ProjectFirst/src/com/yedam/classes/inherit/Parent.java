@@ -5,7 +5,7 @@ public class Parent {
 	private String firstName;
 	private String telNumber;
 	
-	private Parent() {
+	protected Parent() {
 		
 	}
 
