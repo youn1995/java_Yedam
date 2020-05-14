@@ -13,17 +13,17 @@ public class Friend {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+	//public void setName(String name) {
+	//	this.name = name;
+	//}
 
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
+	//public void setPhoneNumber(String phoneNumber) {
+	//	this.phoneNumber = phoneNumber;
+	//}
 
 	void showInfo() {
 		System.out.println("이름: " + name);
