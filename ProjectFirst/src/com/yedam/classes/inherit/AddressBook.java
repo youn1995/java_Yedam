@@ -53,9 +53,9 @@ public class AddressBook {
 			if (peopleList[i] != null) {
 				System.out.println("------------------");
 				peopleList[i].showInfo();
-			} else if (peopleList[i] == null) {
-				break;
-			}
+			} //else if (peopleList[i] == null) {
+				//break;
+			//}
 		}
 	}
 
