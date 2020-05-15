@@ -20,7 +20,7 @@ public class EmpDAO {
 			e.printStackTrace();
 		}
 		
-		String str;
+		//String str;
 		//str.format("insert into emp values(%d,%s,%s,%s)", args)
 		String sql = "insert into emp values(" + emp.getEmployeeId() + ",'" + emp.getLastName() + "'," + emp.getSalary()
 				+ ",'" + emp.getHireDate() + "')";
