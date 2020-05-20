@@ -2,11 +2,13 @@ package com.yedam.interfaces;
 
 import java.util.Scanner;
 
+
 public class EmpMain {
 	public static void main(String[] args) {
 		// 1.번선택 입력 2.선택 전체리스트 3.수정 4삭제 5.종료
 		Scanner scn = new Scanner(System.in);
 		EmpService service = new EmpServiceImpl();
+		 
 		while (true) {
 			System.out.println("============================================");
 			System.out.println("1.입력, 2.전체리스트 조회, 3.수정, 4.삭제, 5.종료");
@@ -15,11 +17,11 @@ public class EmpMain {
 			int menu = scn.nextInt();
 			if (menu == 1) {
 				System.out.print("사원번호 입력: ");
-				int empId = scn.nextInt();scn.nextLine();
+				int empId = new InputExceptionCheck().intTypeNumCHeck();
 				System.out.print("성 입력: ");
-				String lastName = scn.nextLine();
+				String lastName =  new InputExceptionCheck().StringTypeCHeck();
 				System.out.print("급여 입력: ");
-				int salary = scn.nextInt(); scn.nextLine();
+				int salary = new InputExceptionCheck().intTypeNumCHeck();
 				System.out.print("입사일(YYYY/MM/DD): ");
 				String hireDate = scn.nextLine();
 				Employee emp = new Employee(empId, lastName, salary, hireDate);
