@@ -41,4 +41,19 @@ public class InputExceptionCheck {
 		}
 		return checkedString;
 	}
+	
+	public String DateTypeCheck() {
+		String checkedDate = null;
+		while (true) {
+			checkedDate = scn.nextLine();
+			if(Pattern.matches("", checkedDate)) {
+				
+			} else {
+				break;
+			}
+			
+		}
+		
+		return checkedDate;
+	}
 }
