@@ -1,4 +1,4 @@
-package com.yedam.list;
+package com.yedam.collection.list;
 
 public class EmpServiceImpl implements EmpService{
 	EmpDAO dao = new EmpDAO();

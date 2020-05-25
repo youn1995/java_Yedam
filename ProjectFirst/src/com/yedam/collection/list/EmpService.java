@@ -1,4 +1,4 @@
-package com.yedam.list;
+package com.yedam.collection.list;
 
 public interface EmpService {
 	//기능정의. 구현x

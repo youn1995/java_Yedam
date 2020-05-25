@@ -1,4 +1,4 @@
-package com.yedam.list;
+package com.yedam.collection.list;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
