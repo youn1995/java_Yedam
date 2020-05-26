@@ -1,14 +1,11 @@
 package com.yedam.collection.list;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-public class BoardMain {
+public class BoardMain2 {
 	static Scanner scn = new Scanner(System.in);
 	public static void main(String[] args) {
-		BoardService service = new BoardServiceImpl();
-		List<Board> boards = new ArrayList<>();
+		BoardService2 service = new BoardServiceImpl2();
 		int menuNum = 0;
 		int indexNum = -1;
 		String title = null;
@@ -26,7 +23,7 @@ public class BoardMain {
 			menuNum = checkMenuUserInput(5);
 			if (menuNum == 1) {
 				System.out.println("---------------전체게시글---------------");
-				service.boardList(boards);
+				service.boardList();
 			} else if (menuNum == 2) {
 				System.out.println("---------------게시글작성---------------");
 				System.out.print("제목을 입력하세요 > ");
@@ -36,17 +33,17 @@ public class BoardMain {
 				System.out.print("작성자를 입력하세요 > ");
 				writer = scn.nextLine();
 				Board board = new Board(title, body, writer);
-				service.insertBoard(boards, board);
+				service.insertBoard(board);
 			} else if (menuNum == 3) {
 				System.out.println("---------------게시글수정---------------");
 				System.out.print("수정하고 싶은 게시글 제목을 입력하세요 > ");
 				title = scn.nextLine();
 				System.out.println("");
-				indexNum = service.findBoard(boards, title);
+				indexNum = service.findBoard(title);
 				if(indexNum != -1) {
 					System.out.println("수정하고 싶은 내용을 작성하세요 > ");
 					body = scn.nextLine();
-					service.updateBody(boards, indexNum, body);
+					service.updateBody(indexNum, body);
 				} else if(indexNum == -1) {
 					System.out.println("해당 게시글이 없습니다.");
 				}
@@ -55,9 +52,9 @@ public class BoardMain {
 				System.out.println("---------------게시글삭제---------------");
 				System.out.println("삭제하고 싶은 게시글의 제목을 입력하세요 > ");
 				title = scn.nextLine();
-				indexNum = service.findBoard(boards, title);
+				indexNum = service.findBoard(title);
 				if(indexNum != -1) {
-					service.deleteBoard(boards, indexNum);
+					service.deleteBoard(indexNum);
 				} else if(indexNum == -1) {
 					System.out.println("해당 게시글이 없습니다.");
 				}
