@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import java.lang.Double?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox xmlns:fx="http://javafx.com/fxml/1">
+	<padding>
+		<Insets topRightBottomLeft="10" />
+	</padding>
+	<children>
+		<ImageView fitWidth="200" preserveRatio="true">
+			<image>
+				<Image url="@../images/javafx.jpg" /> <!-- /로 시작하면 절대경로 src기준으로 시작 /없으면 현재 폴더기준으로 상대경로를 적어줘야함 -->
+			</image>
+		</ImageView>
+
+		<HBox alignment="CENTER" spacing="10.0">
+			<children>
+				<Button text="이전"></Button>
+
+				<Button text="다음">
+					<HBox.hgrow>
+						<Priority fx:constant="ALWAYS" /> <!-- always never sometimes -->
+					</HBox.hgrow>
+					<maxWidth>
+						<Double fx:constant="MAX_VALUE" />
+					</maxWidth>
+				</Button>
+			</children>
+			<VBox.margin>
+				<Insets top="10.0" />
+			</VBox.margin>
+		</HBox>
+	</children>
+</VBox>
+
