@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class AccountExample {
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner scn = new Scanner(System.in);
 		Account[] accounts = new Account[100];
 
