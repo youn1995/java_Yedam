@@ -1,24 +1,24 @@
-package button_pack;
+package input_pack;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class ButtonMain extends Application{
+public class InputMain extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		BorderPane root = FXMLLoader.load(getClass().getResource("ButtonControl.fxml"));
-		Scene scene= new Scene(root);
+		Parent root = FXMLLoader.load(getClass().getResource("InputControl.fxml"));
+		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
+		primaryStage.setTitle("Input Sample");
 		primaryStage.show();
-		primaryStage.setTitle("Button Sample");
+		
 	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
-
 }

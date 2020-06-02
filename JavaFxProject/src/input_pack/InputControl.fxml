@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections?>
+
+
+<AnchorPane prefHeight="380.0" prefWidth="485.0"
+	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+	fx:controller="input_pack.InputController">
+	<children>
+		<TextField layoutX="78.0" layoutY="26.0" prefHeight="23.0"
+			prefWidth="393.0" fx:id="txtTitle" />
+		<Label layoutX="29.0" layoutY="30.0" text="제목" />
+		<Label layoutX="17.0" layoutY="61.0" text="비밀번호" />
+		<Label layoutX="29.0" layoutY="93.0" text="공개" />
+		<Label layoutX="251.0" layoutY="93.0" text="게시종료" />
+		<Label layoutX="29.0" layoutY="142.0" text="내용" />
+		<PasswordField layoutX="78.0" layoutY="57.0"
+			fx:id="pwdTitle" />
+		<ComboBox layoutX="78.0" layoutY="89.0" prefHeight="23.0"
+			prefWidth="138.0" promptText="선택하세요" fx:id="comboPublic">
+			<items>
+				<FXCollections fx:factory="observableArrayList">
+					<String fx:value="공개" />
+					<String fx:value="비공개" />
+				</FXCollections>
+			</items>
+		</ComboBox>
+		<DatePicker layoutX="308.0" layoutY="89.0"
+			promptText="날짜를 선택하세요" fx:id="dateExit" />
+		<TextArea layoutX="19.0" layoutY="164.0" prefHeight="162.0"
+			prefWidth="448.0" fx:id="txtContent"/>
+		<Separator layoutX="19.0" layoutY="332.0" prefHeight="3.0"
+			prefWidth="448.0" />
+		<Button layoutX="196.0" layoutY="343.0" mnemonicParsing="false"
+			text="등록" fx:id = "btnReg" onAction="#handleBtnRegAction"/>
+		<Button layoutX="255.0" layoutY="343.0" mnemonicParsing="false"
+			text="취소" fx:id = "btnCancel" onAction="#handleBtnCancelAction"/>
+	</children>
+</AnchorPane>
