@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -27,10 +28,10 @@ public class BoardController implements Initializable {
 	TableView<Board> tableView;
 	@FXML
 	TextArea txtArea;
-	@FXML
-	String open;
-	@FXML
-	String close;
+//	@FXML
+//	String open;
+//	@FXML
+//	String close;
 	
 	
 	BoardDAO boardDAO = new BoardDAO();
@@ -40,9 +41,14 @@ public class BoardController implements Initializable {
 		boardDAO.getConnect();
 		List<Board> list = boardDAO.listBoard();
 //		for(Board board : list) {
-		FXCollections.observableArrayList().add();
 		
-		tableView.setItems(FXCollections.observableArrayList(list));
+		ObservableList<Board> test = FXCollections.observableArrayList();
+		
+		for(Board board : list) {
+		test.add(board);
+		}
+		
+		tableView.setItems(test);
 		
 		TableColumn<Board, ?> tcTitle = tableView.getColumns().get(0);
 		tcTitle.setCellValueFactory(new PropertyValueFactory("title"));
