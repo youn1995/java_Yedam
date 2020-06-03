@@ -32,24 +32,21 @@ public class BoardController implements Initializable {
 //	String open;
 //	@FXML
 //	String close;
-	
-	
+
 	BoardDAO boardDAO = new BoardDAO();
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		boardDAO.getConnect();
 		List<Board> list = boardDAO.listBoard();
-//		for(Board board : list) {
-		
+
 		ObservableList<Board> test = FXCollections.observableArrayList();
-		
-		for(Board board : list) {
-		test.add(board);
+
+		for (Board board : list) {
+			test.add(board);
 		}
-		
 		tableView.setItems(test);
-		
+
 		TableColumn<Board, ?> tcTitle = tableView.getColumns().get(0);
 		tcTitle.setCellValueFactory(new PropertyValueFactory("title"));
 //		TableColumn<Board, ?> tcPassword = tableView.getColumns().get(1);
@@ -60,8 +57,8 @@ public class BoardController implements Initializable {
 		tcExitDate.setCellValueFactory(new PropertyValueFactory("exitDate"));
 		TableColumn<Board, ?> tcContent = tableView.getColumns().get(3);
 		tcContent.setCellValueFactory(new PropertyValueFactory("content"));
-//		}
-		
+
+
 		tableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Board>() {
 			@Override
 			public void changed(ObservableValue<? extends Board> observable, Board oldValue, Board newValue) {
@@ -72,7 +69,7 @@ public class BoardController implements Initializable {
 				txtArea.setText(newValue.getContent());
 			}
 		});
-		
+
 	}
 
 }

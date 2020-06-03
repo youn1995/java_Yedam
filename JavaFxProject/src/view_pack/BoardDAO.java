@@ -41,7 +41,6 @@ public class BoardDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("조회완료");
 		return boards;
 		
 	}
