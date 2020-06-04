@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane prefHeight="350.0" prefWidth="500.0"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="view_pack2.BoardController">
+	<children>
+		<TableView fx:id="tableView" layoutX="25.0" layoutY="55.0"
+			prefHeight="241" prefWidth="175">
+
+		</TableView>
+
+		<TextField fx:id="txtTitle" layoutX="283.0" layoutY="51.0"
+			prefHeight="23" prefWidth="192">
+		</TextField>
+
+		<ComboBox fx:id="comboProperty" layoutX="235.0"
+			layoutY="110.0" prefHeight="23" prefWidth="85">
+		</ComboBox>
+
+		<TextField fx:id="txtExitDate" layoutX="351.0"
+			layoutY="110.0" prefHeight="23" prefWidth="113">
+		</TextField>
+
+
+		<TextArea fx:id="txtAreaContent" layoutX="235.0"
+			layoutY="163.0" prefHeight="131.0" prefWidth="247.0">
+		</TextArea>
+
+		<Label layoutX="25.0" layoutY="30.0" text="리스트" />
+		<Label layoutX="238.0" layoutY="30.0" text="-----상세내용-----" />
+		<Label layoutX="235.0" layoutY="55.0" text="제목" />
+		<Label layoutX="235.0" layoutY="88.0" text="공개여부" />
+		<Label layoutX="353.0" layoutY="88.0" text="종료일자" />
+		<Label layoutX="235.0" layoutY="139.0" text="내용" />
+
+		<Button fx:id = "btnPre" layoutX="25.0" layoutY="313.0" mnemonicParsing="false"
+			text="이전" />
+		<Button fx:id = "btnNext" layoutX="431.0" layoutY="313.0" mnemonicParsing="false"
+			text="다음" />
+		<Button fx:id = "btnUpdate" layoutX="223.0" layoutY="313.0" 
+			text="수정">
+			<graphic>
+				<ImageView>
+					<Image url="/panes/icons/save.png" />
+				</ImageView>
+			</graphic>
+		</Button>
+	</children>
+</AnchorPane>
