@@ -63,4 +63,11 @@ public class Board {
 	public void setContent(String content) {
 		this.content.set(content);
 	}
+
+	@Override
+	public String toString() {
+		return "Board [title=" + title + ", password=" + password + ", publicity=" + publicity + ", exitDate="
+				+ exitDate + ", content=" + content + "]";
+	}
+	
 }
