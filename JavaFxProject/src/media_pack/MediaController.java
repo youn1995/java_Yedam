@@ -1,8 +1,11 @@
 package media_pack;
 
 import java.net.URL;
+import java.time.Duration;
 import java.util.ResourceBundle;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -47,6 +50,15 @@ public class MediaController implements Initializable {
 				btnPlay.setDisable(false);
 				btnPause.setDisable(true);
 				btnStop.setDisable(true);
+				player.currentTimeProperty().addListener(new ChangeListener<Duration>() {
+
+					@Override
+					public void changed(ObservableValue<? extends Duration> observable, Duration oldValue,
+							Duration newValue) {
+//						double progress = player.ge
+						
+					}
+				});
 			}
 		});
 		player.setOnPlaying(new Runnable() {
@@ -83,6 +95,15 @@ public class MediaController implements Initializable {
 			@Override
 			public void handle(ActionEvent event) {
 				player.pause();
+			}
+		});
+		
+		sliderVolume.valueProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				player.setVolume(sliderVolume.getValue() / 100.0);
+				
 			}
 		});
 
