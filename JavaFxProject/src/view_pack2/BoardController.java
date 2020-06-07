@@ -43,7 +43,7 @@ public class BoardController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, "hr", "hr");

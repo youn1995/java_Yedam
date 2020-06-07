@@ -55,8 +55,12 @@ public class MediaController implements Initializable {
 					@Override
 					public void changed(ObservableValue<? extends Duration> observable, Duration oldValue,
 							Duration newValue) {
-//						double progress = player.ge
-						
+						double progress = player.getCurrentTime().toSeconds() / player.getTotalDuration().toSeconds();
+						progressBar.setProgress(progress);
+						progressIndicator.setProgress(progress);
+						labelTime.setText((int) player.getCurrentTime().toSeconds() + "/"
+								+ (int) player.getTotalDuration().toSeconds() + " sec");
+
 					}
 				});
 			}
@@ -97,13 +101,13 @@ public class MediaController implements Initializable {
 				player.pause();
 			}
 		});
-		
+
 		sliderVolume.valueProperty().addListener(new ChangeListener<Number>() {
 
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 				player.setVolume(sliderVolume.getValue() / 100.0);
-				
+
 			}
 		});
 
